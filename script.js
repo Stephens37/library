@@ -1,26 +1,22 @@
 const myLibrary = []
-let pages = document.getElementById("pages")
-let name = document.getElementById("name")
+const page = document.getElementById('pages').innerHTML
+const titles = document.getElementById('title').innerHTML
 
-function Book (name, pages) {
-  this.name = name
+function Book (title, pages) {
+  this.title = title
   this.pages = pages
   this.getFullBook = function () {
-    return `${this.name} ${this.pages}`
+    return `${this.title} ${this.pages}`
   }
 }
 
-const knig = new Book('hi ', '24')
+const knig = new Book(titles, page)
 
-function addBookToLibrary () {
-  for (i = 0; i < myLibrary.length; i++) {
-  myLibrary.push(knig)
-}
-}
-
-addBookToLibrary()
-
-function formReset() {
-  document.getElementsByTagName("form").reset()
+function formReset () {
+  document.getElementById('book_info').reset()
+  myLibrary.push(page)
+  myLibrary.push(titles)
 }
 
+
+console.log(myLibrary)
