@@ -9,10 +9,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button id="input">Input</button>
-    <div class="input_form">
-        <label for="title">TITLE</label>
-        <input type="text" name="title" id="title">
+    <div class="book_form">
+        <form action="javascript:," onsubmit="formReset()" id="book_info">
+            <label for="title">TITLE</label>
+            <input type="text" name="title" id="title">
+            <label for="title">TITLE</label>
+            <input type="text" name="pages" id="pages">
+        </form>
     </div>
+    <button type="submit" id="submit">Submit</button>
 </body>
 </html>

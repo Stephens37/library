@@ -1,4 +1,6 @@
 const myLibrary = []
+let pages = document.getElementById("pages")
+let name = document.getElementById("name")
 
 function Book (name, pages) {
   this.name = name
@@ -18,4 +20,7 @@ function addBookToLibrary () {
 
 addBookToLibrary()
 
+function formReset() {
+  document.getElementsByTagName("form").reset()
+}
 
