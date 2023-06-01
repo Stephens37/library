@@ -1,22 +1,17 @@
 const myLibrary = []
-const page = document.getElementById('pages').innerHTML
-const titles = document.getElementById('title').innerHTML
 
-function Book (title, pages) {
+function Book(title = 'unknown', pages = 'unknown') {
   this.title = title
   this.pages = pages
-  this.getFullBook = function () {
-    return `${this.title} ${this.pages}`
+  this.sayName = function () {
+    myLibrary.push(title, pages)
+    console.log(myLibrary)
   }
 }
 
-const knig = new Book(titles, page)
 
-function formReset () {
-  document.getElementById('book_info').reset()
-  myLibrary.push(page)
-  myLibrary.push(titles)
+function addToLibrary () {
+  const player1 = new Book(document.getElementById('title').value, document.getElementById('pages').value)
+  player1.sayName()
 }
 
-
-console.log(myLibrary)
