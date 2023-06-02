@@ -7,3 +7,8 @@
     border-width: 5px;
 }
 
+body {
+    height: 100%;
+    width: 100%;
+}
+
