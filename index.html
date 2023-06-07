@@ -10,18 +10,32 @@
 <body>
     <div class="book_form">
         <form action="javascript:," onsubmit="addToLibrary()" id='book_info'>
+            <label for="read">READ</label>
+            <input type="checkbox" name="title" id="title">
             <label for="title">TITLE</label>
             <input type="text" name="title" id="title">
+            <label for="author">AUTHOR</label>
+            <input type="text" name="author" id="author">
             <label for="pages">PAGES</label>
-            <input type="text" name="pages" id="pages">
+            <input type="number" name="pages" id="pages">
         </form>
     </div>
     <button type="submit" id="submit" form="book_info">Submit</button>
-    <div class="cards">
-        
-    </div>
 
-    <div class="table"></div>
+    <table id="table">
+        <tr>
+            <td>Read</td>
+            <td>Title</td>
+            <td>Author</td>
+            <td>Pages</td>
+        </tr>
+        <tr>
+            <td id="read"></td>
+            <td id="title"></td>
+            <td id="author"></td>
+            <td id="pages"></td>
+        </tr>
+    </table>
     <script src="script.js"></script>
 </body>
 </html>

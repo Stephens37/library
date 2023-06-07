@@ -9,20 +9,15 @@ function Book (title = 'unknown', pages = 'unknown') {
   }
 }
 
-const card = document.querySelectorAll('.cards')
+const card = document.querySelector('#table')
 
 function addToLibrary () {
   const htmlTitle = document.getElementById('title').value
   const htmlPages = document.getElementById('pages').value
   const player1 = new Book(htmlTitle, htmlPages)
   player1.sayName()
-
-  const bookDiv = document.createElement('div')
-  bookDiv.setAttribute('class', 'bookcard')
-  card.appendChild(bookDiv)
-
-  const bookTitle = document.createElement('div')
-  bookTitle.setAttribute('class', 'cardtitle')
+  
+  const bookTitle = document.getElementById
   bookTitle.innerHTML = htmlTitle
   bookDiv.appendChild(bookTitle)
   const bookPages = document.createElement('div')
