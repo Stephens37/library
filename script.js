@@ -9,15 +9,7 @@ function Book (title = 'unknown', pages = 'unknown') {
   }
 }
 
-const bookDiv = document.createElement('div')
-bookDiv.classList.add('bookcard')
-const bookTitle = document.createElement('div')
-bookTitle.classList.add('title')
-bookDiv.appendChild(bookTitle)
-const bookPages = document.createElement('div')
-bookPages.classList.add('pages')
-bookDiv.appendChild(bookPages)
-
+const card = document.querySelectorAll('.cards')
 
 function addToLibrary () {
   const htmlTitle = document.getElementById('title').value
@@ -26,17 +18,17 @@ function addToLibrary () {
   player1.sayName()
 
   const bookDiv = document.createElement('div')
-  bookDiv.classList.add('bookcard')
+  bookDiv.setAttribute('class', 'bookcard')
+  card.appendChild(bookDiv)
 
   const bookTitle = document.createElement('div')
-  bookTitle.classList.add('cardtitle')
+  bookTitle.setAttribute('class', 'cardtitle')
   bookTitle.innerHTML = htmlTitle
   bookDiv.appendChild(bookTitle)
   const bookPages = document.createElement('div')
-  bookPages.classList.add('cardpages')
+  bookPages.setAttribute('class', 'cardpages')
   bookPages.innerHTML = htmlPages
   bookDiv.appendChild(bookPages)
-
+  console.log(bookTitle.innerHTML)
   document.getElementById('book_info').reset()
 }
-
