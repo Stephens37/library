@@ -1,29 +1,33 @@
 const myLibrary = []
 
-function Book (title = 'unknown', pages = 'unknown') {
+function Book (title = 'unknown', author = 'unknown', pages = 'unknown') {
   this.title = title
+  this.author = author
   this.pages = pages
   this.sayName = function () {
-    myLibrary.push(title, pages)
+    myLibrary.push(title, author, pages)
     console.log(myLibrary)
   }
 }
 
-const card = document.querySelector('#table')
+const table = document.querySelector('#table')
 
 function addToLibrary () {
   const htmlTitle = document.getElementById('title').value
+  const htmlAuthor = document.getElementById('author').value
   const htmlPages = document.getElementById('pages').value
-  const player1 = new Book(htmlTitle, htmlPages)
+  const player1 = new Book(htmlTitle, htmlAuthor, htmlPages)
   player1.sayName()
-  
-  const bookTitle = document.getElementById
-  bookTitle.innerHTML = htmlTitle
-  bookDiv.appendChild(bookTitle)
-  const bookPages = document.createElement('div')
-  bookPages.setAttribute('class', 'cardpages')
-  bookPages.innerHTML = htmlPages
-  bookDiv.appendChild(bookPages)
-  console.log(bookTitle.innerHTML)
-  document.getElementById('book_info').reset()
+
+  for (i = 0; i < myLibrary.length; i++) {
+    const bookTitle = document.getElementById('titleTable')
+    bookTitle.innerHTML = htmlTitle
+    
+    const bookAuthor = document.getElementById('authorTable')
+    bookAuthor.innerHTML = htmlAuthor
+    const bookPages = document.getElementById('pagesTable')
+    bookPages.innerHTML = htmlPages
+    
+    document.getElementById('book_info').reset()
+  }
 }

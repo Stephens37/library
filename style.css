@@ -1,12 +1,11 @@
-.book_form {
-    display: grid;
-    grid-template-columns: ;
-}
+
 
 body {
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 33% 67%;
 }
+
+
 
 .cardtitle {
     font-size: 16px;

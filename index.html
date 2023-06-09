@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <div class="book_form">
+        <div id="library_header_text">LIBRARY</div>
         <form action="javascript:," onsubmit="addToLibrary()" id='book_info'>
-            <label for="read">READ</label>
-            <input type="checkbox" name="title" id="title">
             <label for="title">TITLE</label>
             <input type="text" name="title" id="title">
             <label for="author">AUTHOR</label>
@@ -19,21 +19,19 @@
             <label for="pages">PAGES</label>
             <input type="number" name="pages" id="pages">
         </form>
+        <button type="submit" id="submit" form="book_info">Submit</button>
     </div>
-    <button type="submit" id="submit" form="book_info">Submit</button>
 
     <table id="table">
         <tr>
-            <td>Read</td>
             <td>Title</td>
             <td>Author</td>
             <td>Pages</td>
         </tr>
         <tr>
-            <td id="read"></td>
-            <td id="title"></td>
-            <td id="author"></td>
-            <td id="pages"></td>
+            <td id="titleTable" class="tablevalues"></td>
+            <td id="authorTable" class="tablevalues"></td>
+            <td id="pagesTable" class="tablevalues"></td>
         </tr>
     </table>
     <script src="script.js"></script>
