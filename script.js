@@ -1,4 +1,6 @@
-const myLibrary = []
+/* es-lint disable */
+
+let myLibrary = []
 
 function Book (title = 'unknown', author = 'unknown', pages = 'unknown') {
   this.title = title
@@ -21,7 +23,8 @@ function addToLibrary () {
 
   for (i = 0; i < myLibrary.length; i++) {
     const tableRow = document.createElement('tr')
-    tableRow.className('tablerow')
+    tableRow.setAttribute('class', 'tablerow')
+    table.append(tableRow)
 
     const bookTitle = document.createElement('td')
     bookTitle.innerHTML = htmlTitle
@@ -40,5 +43,6 @@ function addToLibrary () {
     const bookPages = document.getElementById('pagesTable')
     bookPages.innerHTML = htmlPages*/
     document.getElementById('book_info').reset()
+    myLibrary.reset()
   }
 }
