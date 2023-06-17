@@ -20,14 +20,25 @@ function addToLibrary () {
   player1.sayName()
 
   for (i = 0; i < myLibrary.length; i++) {
-    const bookTitle = document.getElementById('titleTable')
+    const tableRow = document.createElement('tr')
+    tableRow.className('tablerow')
+
+    const bookTitle = document.createElement('td')
     bookTitle.innerHTML = htmlTitle
+    tableRow.append(htmlTitle)
     
-    const bookAuthor = document.getElementById('authorTable')
+    const bookAuthor = document.createElement('td')
+    bookAuthor.innerHTML = htmlAuthor
+    tableRow.append(htmlAuthor)
+
+    const bookPages = document.createElement('td')
+    bookPages.innerHTML = htmlPages
+    tableRow.append(htmlPages)
+    // eslint-disable-next-line spaced-comment
+    /*const bookAuthor = document.getElementById('authorTable')
     bookAuthor.innerHTML = htmlAuthor
     const bookPages = document.getElementById('pagesTable')
-    bookPages.innerHTML = htmlPages
-    
+    bookPages.innerHTML = htmlPages*/
     document.getElementById('book_info').reset()
   }
 }
