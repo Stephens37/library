@@ -2,12 +2,37 @@
 
 body {
     display: grid;
-    grid-template-columns: 33% 67%;
+    grid-template-columns: 34% 66%;
 }
 
+.book_form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
 
+.table {
+    grid-column: 1 / span 3;
+}
 
+.tablerow {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
 
+#text {
+    grid-column: 1 / span 3;
+}
+
+.booktitle {
+    grid-column: 1 / span 1;
+}
+
+.bookauthor {
+    grid-column: 2 / span 1;
+}
+.bookpages {
+    grid-column: 3 / span 1;
+}
 
 .cardtitle {
     font-size: 16px;

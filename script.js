@@ -27,14 +27,17 @@ function addToLibrary () {
     table.append(tableRow)
 
     const bookTitle = document.createElement('td')
+    bookTitle.setAttribute('class', 'booktitle')
     bookTitle.innerHTML = htmlTitle
     tableRow.append(htmlTitle)
-    
+
     const bookAuthor = document.createElement('td')
+    bookAuthor.setAttribute('class', 'bookauthor')
     bookAuthor.innerHTML = htmlAuthor
     tableRow.append(htmlAuthor)
 
     const bookPages = document.createElement('td')
+    bookPages.setAttribute('class', 'bookpages')
     bookPages.innerHTML = htmlPages
     tableRow.append(htmlPages)
     // eslint-disable-next-line spaced-comment
