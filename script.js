@@ -12,7 +12,12 @@ function Book (title = 'unknown', author = 'unknown', pages = 'unknown') {
   }
 }
 
-const table = document.querySelector('#table')
+const tbody = document.querySelector('#tbody')
+
+/*const titleHeader = document.querySelector('#titleheader')
+const authorHeader = document.querySelector('#authorheader')
+const 
+*/
 
 function addToLibrary () {
   const htmlTitle = document.getElementById('title').value
@@ -20,32 +25,32 @@ function addToLibrary () {
   const htmlPages = document.getElementById('pages').value
   const player1 = new Book(htmlTitle, htmlAuthor, htmlPages)
   player1.sayName()
+  
 
-  for (i = 0; i < myLibrary.length; i++) {
+  for (i = 0; i < 1; i++) {
     const tableRow = document.createElement('tr')
     tableRow.setAttribute('class', 'tablerow')
-    table.append(tableRow)
+    tbody.append(tableRow)
 
     const bookTitle = document.createElement('td')
     bookTitle.setAttribute('class', 'booktitle')
     bookTitle.innerHTML = htmlTitle
-    tableRow.append(htmlTitle)
+    tableRow.append(bookTitle)
 
     const bookAuthor = document.createElement('td')
     bookAuthor.setAttribute('class', 'bookauthor')
     bookAuthor.innerHTML = htmlAuthor
-    tableRow.append(htmlAuthor)
+    tableRow.append(bookAuthor)
 
     const bookPages = document.createElement('td')
     bookPages.setAttribute('class', 'bookpages')
     bookPages.innerHTML = htmlPages
-    tableRow.append(htmlPages)
+    tableRow.append(bookPages)
     // eslint-disable-next-line spaced-comment
     /*const bookAuthor = document.getElementById('authorTable')
     bookAuthor.innerHTML = htmlAuthor
     const bookPages = document.getElementById('pagesTable')
     bookPages.innerHTML = htmlPages*/
     document.getElementById('book_info').reset()
-    myLibrary.reset()
   }
 }

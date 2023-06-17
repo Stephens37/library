@@ -17,10 +17,7 @@ body {
 .tablerow {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-}
-
-#text {
-    grid-column: 1 / span 3;
+    grid-template-rows: auto;
 }
 
 .booktitle {
