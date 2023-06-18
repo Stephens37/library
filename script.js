@@ -1,11 +1,12 @@
 /* es-lint disable */
 
+
 function openForm() {
-  document.getElementsByClassName('book_form').style.display('block')
+  document.getElementById('book_form').style.display = 'block'
 }
 
 function closeForm() {
-  document.getElementsByClassName('book_form').style.display('none')
+  document.getElementById('book_form').style.display = 'block'
 }
 
 let myLibrary = []
@@ -28,12 +29,17 @@ function addToLibrary () {
   const htmlPages = document.getElementById('pages').value
   const player1 = new Book(htmlTitle, htmlAuthor, htmlPages)
   player1.sayName()
-  
 
   for (i = 0; i < 1; i++) {
     const tableRow = document.createElement('tr')
     tableRow.setAttribute('class', 'tablerow')
     tbody.append(tableRow)
+
+    const deleteBook = document.createElement('button')
+    deleteBook.setAttribute('onclick', deleteBook())
+
+    const read = document.createElement('input')
+    read.setAttribute('type', 'checkbox')
 
     const bookTitle = document.createElement('td')
     bookTitle.setAttribute('class', 'booktitle')
@@ -49,6 +55,7 @@ function addToLibrary () {
     bookPages.setAttribute('class', 'bookpages')
     bookPages.innerHTML = htmlPages
     tableRow.append(bookPages)
+
     // eslint-disable-next-line spaced-comment
     /*const bookAuthor = document.getElementById('authorTable')
     bookAuthor.innerHTML = htmlAuthor
@@ -56,4 +63,10 @@ function addToLibrary () {
     bookPages.innerHTML = htmlPages*/
     document.getElementById('book_info').reset()
   }
+}
+
+function deleteBook() {
+  var td = event.target.parentNode;
+  var tr = td.parentNode;
+  tr.parentNode.removeChild(tr)
 }
