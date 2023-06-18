@@ -22,12 +22,15 @@
         <button type="submit" id="submit" form="book_info">Submit</button>
     </div>
 
+
+    
     <table id="table">
         <thead>
-            <tr>
-                <td id="titletitle">Title</td>
-                <td id="authortitle">Author</td>
-                <td id="pagestitle">Pages</td>
+            <tr id="headrow">
+                <button id="newbook" onclick="openForm()">New Book</button>
+                <td id="titletitle" class="headcells">Title</td>
+                <td id="authortitle" class="headcells">Author</td>
+                <td id="pagestitle" class="headcells">Pages</td>
             </tr>
         </thead>
         <tbody id="tbody">

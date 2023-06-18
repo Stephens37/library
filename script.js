@@ -1,5 +1,13 @@
 /* es-lint disable */
 
+function openForm() {
+  document.getElementsByClassName('book_form').style.display('block')
+}
+
+function closeForm() {
+  document.getElementsByClassName('book_form').style.display('none')
+}
+
 let myLibrary = []
 
 function Book (title = 'unknown', author = 'unknown', pages = 'unknown') {
@@ -13,11 +21,6 @@ function Book (title = 'unknown', author = 'unknown', pages = 'unknown') {
 }
 
 const tbody = document.querySelector('#tbody')
-
-/*const titleHeader = document.querySelector('#titleheader')
-const authorHeader = document.querySelector('#authorheader')
-const 
-*/
 
 function addToLibrary () {
   const htmlTitle = document.getElementById('title').value

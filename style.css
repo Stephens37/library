@@ -1,17 +1,35 @@
-
+html, body {
+    margin: 0;
+    height: 100%;
+}
 
 body {
     display: grid;
-    grid-template-columns: 34% 66%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 100%;
+}
+
+#newbook {
+    width: max-content;
 }
 
 .book_form {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: none;
+
 }
 
 .table {
     grid-column: 1 / span 3;
+}
+
+#headrow {
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr;
+    align-items: space-between;
+}
+
+.headcells {
+    width: max-content;
 }
 
 .tablerow {
