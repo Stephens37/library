@@ -2,11 +2,11 @@
 
 
 function openForm() {
-  document.getElementById('book_form').style.display = 'block'
+  document.getElementById('book_form').style.display = 'grid'
 }
 
 function closeForm() {
-  document.getElementById('book_form').style.display = 'block'
+  document.getElementById('book_form').style.display = 'none'
 }
 
 let myLibrary = []
@@ -30,13 +30,17 @@ function addToLibrary () {
   const player1 = new Book(htmlTitle, htmlAuthor, htmlPages)
   player1.sayName()
 
+ /* function deleteBook() {
+    htmlTitle.parentNode.removeChild(htmlTitle)
+  } */
+
   for (i = 0; i < 1; i++) {
     const tableRow = document.createElement('tr')
     tableRow.setAttribute('class', 'tablerow')
     tbody.append(tableRow)
 
-    const deleteBook = document.createElement('button')
-    deleteBook.setAttribute('onclick', deleteBook())
+    /*const deleteBook = document.createElement('button')
+    deleteBook.onclick(deleteBook())*/
 
     const read = document.createElement('input')
     read.setAttribute('type', 'checkbox')
@@ -63,10 +67,4 @@ function addToLibrary () {
     bookPages.innerHTML = htmlPages*/
     document.getElementById('book_info').reset()
   }
-}
-
-function deleteBook() {
-  var td = event.target.parentNode;
-  var tr = td.parentNode;
-  tr.parentNode.removeChild(tr)
 }

@@ -9,25 +9,23 @@
 </head>
 <body>
 
-    <div id="book_form">
-        <div id="library_header_text">LIBRARY</div>
-        <form action="javascript:," onsubmit="addToLibrary()" id='book_info'>
+    <button id="newbook" onclick="openForm()">New Book</button>
+        
+        <form action="javascript:," onsubmit="addToLibrary()" id='book_form'>
             <label for="title">TITLE</label>
             <input type="text" name="title" id="title">
             <label for="author">AUTHOR</label>
             <input type="text" name="author" id="author">
             <label for="pages">PAGES</label>
             <input type="text" name="pages" id="pages">
+            <button type="submit" id="submit">Submit</button>
         </form>
-        <button type="submit" id="submit" form="book_info">Submit</button>
-    </div>
 
-
+    
     
     <table id="table">
         <thead>
             <tr id="headrow">
-                <button id="newbook" onclick="openForm()">New Book</button>
                 <td id="titletitle" class="headcells">Title</td>
                 <td id="authortitle" class="headcells">Author</td>
                 <td id="pagestitle" class="headcells">Pages</td>
