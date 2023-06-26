@@ -50,8 +50,17 @@ label {
     align-items: space-between;
 }
 
+.bookheader {
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+}
+
 .headcells {
     width: max-content;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
 }
 
 .tablerow {

@@ -12,11 +12,12 @@
     <button id="newbook" onclick="openForm()">New Book</button>
         
         <form action="javascript:," onsubmit="addToLibrary()" id='book_form'>
-            <label for="title">TITLE</label>
+            <button id="close" type="button" onclick="closeForm()">X</button>
+            <label for="title" class="bookheader">TITLE</label>
             <input type="text" name="title" id="title">
-            <label for="author">AUTHOR</label>
+            <label for="author" class="bookheader">AUTHOR</label>
             <input type="text" name="author" id="author">
-            <label for="pages">PAGES</label>
+            <label for="pages" class="bookheader">PAGES</label>
             <input type="text" name="pages" id="pages">
             <button type="submit" id="submit">Submit</button>
         </form>

@@ -1,13 +1,17 @@
 /* es-lint disable */
 
+const form = document.getElementById('book_form')
+const opening = document.getElementById('newbook')
+const closing = document.getElementById('close')
 
 function openForm() {
-  document.getElementById('book_form').style.display = 'grid'
+  form.style.display = 'grid'
 }
 
 function closeForm() {
-  document.getElementById('book_form').style.display = 'none'
+  form.style.display = 'none'
 }
+
 
 let myLibrary = []
 
@@ -24,6 +28,14 @@ function Book (title = 'unknown', author = 'unknown', pages = 'unknown') {
 const tbody = document.querySelector('#tbody')
 
 function addToLibrary () {
+  if(closeForm() == true){
+    event.preventDefault == true
+  }
+  else if (closeForm() == false) {
+    event.preventDefault == false
+  }
+  
+
   const htmlTitle = document.getElementById('title').value
   const htmlAuthor = document.getElementById('author').value
   const htmlPages = document.getElementById('pages').value
@@ -65,6 +77,5 @@ function addToLibrary () {
     bookAuthor.innerHTML = htmlAuthor
     const bookPages = document.getElementById('pagesTable')
     bookPages.innerHTML = htmlPages*/
-    document.getElementById('book_info').reset()
   }
 }
