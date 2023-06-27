@@ -53,6 +53,11 @@ function addToLibrary () {
     const read = document.createElement('input')
     read.setAttribute('type', 'checkbox')
 
+    const removeBook = document.createElement('button')
+    removeBook.setAttribute('class', 'removebook')
+    removeBook.innerHTML = 'Delete'
+    tableRow.append(removeBook)
+
     const bookTitle = document.createElement('td')
     bookTitle.setAttribute('class', 'booktitle')
     bookTitle.innerHTML = htmlTitle
@@ -67,12 +72,15 @@ function addToLibrary () {
     bookPages.setAttribute('class', 'bookpages')
     bookPages.innerHTML = htmlPages
     tableRow.append(bookPages)
-
-    // eslint-disable-next-line spaced-comment
-    /*const bookAuthor = document.getElementById('authorTable')
-    bookAuthor.innerHTML = htmlAuthor
-    const bookPages = document.getElementById('pagesTable')
-    bookPages.innerHTML = htmlPages*/
+    function deleteBook (removeTitle, removeAuthor, removePages) {
+      removeTitle = myLibrary.indexOf('booktitle')
+      removeAuthor = myLibrary.indexOf('bookauthor')
+      removePages = myLibrary.indexOf('bookpages')
+      myLibrary.splice('booktitle', removeTitle)
+      myLibrary.splice('bookauthor', removeAuthor)
+      myLibrary.splice('bookpages', removePages)
+    }
+    removeBook.addEventListener('click', deleteBook)
   }
 }
 

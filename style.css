@@ -46,7 +46,7 @@ label {
 
 #headrow {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     align-items: space-between;
 }
 
@@ -65,19 +65,23 @@ label {
 
 .tablerow {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
 }
 
-.booktitle {
+.removebook {
     grid-column: 1 / span 1;
 }
 
-.bookauthor {
+.booktitle {
     grid-column: 2 / span 1;
 }
-.bookpages {
+
+.bookauthor {
     grid-column: 3 / span 1;
+}
+.bookpages {
+    grid-column: 4 / span 1;
 }
 
 .cardtitle {
