@@ -4,13 +4,17 @@ const form = document.getElementById('book_form')
 const opening = document.getElementById('newbook')
 const closing = document.getElementById('close')
 
-function openForm() {
+function openForm () {
   form.style.display = 'grid'
 }
 
-function closeForm() {
+document.getElementById('newbook').addEventListener('click', openForm)
+
+function closeForm () {
   form.style.display = 'none'
 }
+
+closing.addEventListener('click', closeForm)
 
 
 let myLibrary = []
@@ -28,21 +32,13 @@ function Book (title = 'unknown', author = 'unknown', pages = 'unknown') {
 const tbody = document.querySelector('#tbody')
 
 function addToLibrary () {
-  if(closeForm() == true){
-    event.preventDefault == true
-  }
-  else if (closeForm() == false) {
-    event.preventDefault == false
-  }
-  
-
   const htmlTitle = document.getElementById('title').value
   const htmlAuthor = document.getElementById('author').value
   const htmlPages = document.getElementById('pages').value
   const player1 = new Book(htmlTitle, htmlAuthor, htmlPages)
   player1.sayName()
 
- /* function deleteBook() {
+  /* function deleteBook() {
     htmlTitle.parentNode.removeChild(htmlTitle)
   } */
 
@@ -79,3 +75,5 @@ function addToLibrary () {
     bookPages.innerHTML = htmlPages*/
   }
 }
+
+form.addEventListener('submit', addToLibrary)
