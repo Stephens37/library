@@ -56,29 +56,24 @@ function addToLibrary () {
     const removeBook = document.createElement('button')
     removeBook.setAttribute('class', 'removebook')
     removeBook.innerHTML = 'Delete'
-    tableRow.append(removeBook)
+    tableRow.append(this.removeBook)
 
     const bookTitle = document.createElement('td')
     bookTitle.setAttribute('class', 'booktitle')
     bookTitle.innerHTML = htmlTitle
-    tableRow.append(bookTitle)
+    tableRow.append(this.bookTitle)
 
     const bookAuthor = document.createElement('td')
     bookAuthor.setAttribute('class', 'bookauthor')
     bookAuthor.innerHTML = htmlAuthor
-    tableRow.append(bookAuthor)
+    tableRow.append(this.bookAuthor)
 
     const bookPages = document.createElement('td')
     bookPages.setAttribute('class', 'bookpages')
     bookPages.innerHTML = htmlPages
     tableRow.append(bookPages)
-    function deleteBook (removeTitle, removeAuthor, removePages) {
-      removeTitle = myLibrary.indexOf('booktitle')
-      removeAuthor = myLibrary.indexOf('bookauthor')
-      removePages = myLibrary.indexOf('bookpages')
-      myLibrary.splice('booktitle', removeTitle)
-      myLibrary.splice('bookauthor', removeAuthor)
-      myLibrary.splice('bookpages', removePages)
+    function deleteBook () {
+      myLibrary.splice(this.bookTitle, 3)
     }
     removeBook.addEventListener('click', deleteBook)
   }
