@@ -53,30 +53,49 @@ function addToLibrary () {
     const read = document.createElement('input')
     read.setAttribute('type', 'checkbox')
 
+    function bookTitle () {
+      const bookTitle = document.createElement('td')
+      bookTitle.setAttribute('class', 'booktitle')
+      bookTitle.innerHTML = htmlTitle
+      tableRow.append(bookTitle)
+    }
+    bookTitle()
+
+    function bookAuthor () {
+      const bookAuthor = document.createElement('td')
+      bookAuthor.setAttribute('class', 'bookauthor')
+      bookAuthor.innerHTML = htmlAuthor
+      tableRow.append(bookAuthor)
+    }
+    bookAuthor()
+
+
+    function bookPages () {
+      const bookPages = document.createElement('td')
+      bookPages.setAttribute('class', 'bookpages')
+      bookPages.innerHTML = htmlPages
+      tableRow.append(bookPages)
+    }
+    bookPages()
+
+    function deleteBook () {
+      myLibrary.splice(this.bookTitle, 3)
+      bookTitle() == false
+      bookAuthor() == false
+      bookPages() == false
+      document.getElementById('deletedelete') == false
+    }
+
+  function noBook () {
     const removeBook = document.createElement('button')
     removeBook.setAttribute('class', 'removebook')
     removeBook.innerHTML = 'Delete'
-    tableRow.append(this.removeBook)
-
-    const bookTitle = document.createElement('td')
-    bookTitle.setAttribute('class', 'booktitle')
-    bookTitle.innerHTML = htmlTitle
-    tableRow.append(this.bookTitle)
-
-    const bookAuthor = document.createElement('td')
-    bookAuthor.setAttribute('class', 'bookauthor')
-    bookAuthor.innerHTML = htmlAuthor
-    tableRow.append(this.bookAuthor)
-
-    const bookPages = document.createElement('td')
-    bookPages.setAttribute('class', 'bookpages')
-    bookPages.innerHTML = htmlPages
-    tableRow.append(bookPages)
-    function deleteBook () {
-      myLibrary.splice(this.bookTitle, 3)
-    }
+    tableRow.append(removeBook)
     removeBook.addEventListener('click', deleteBook)
+    addToLibrary = false
   }
+  noBook()
+}
 }
 
 form.addEventListener('submit', addToLibrary)
