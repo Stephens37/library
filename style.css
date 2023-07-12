@@ -46,7 +46,7 @@ label {
 
 #headrow {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     align-items: space-between;
 }
 
@@ -58,30 +58,37 @@ label {
 
 .headcells {
     width: max-content;
-    font-size: 25px;
+    font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 500;
 }
 
 .tablerow {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
 }
 
 .removebook {
     grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+    width: 100px;
+}
+
+.bookread {
+    grid-column: 2 / span 1;
+    width: fit-content;
 }
 
 .booktitle {
-    grid-column: 2 / span 1;
+    grid-column: 3 / span 1;
 }
 
 .bookauthor {
-    grid-column: 3 / span 1;
+    grid-column: 4 / span 1;
 }
 .bookpages {
-    grid-column: 4 / span 1;
+    grid-column: 5 / span 1;
 }
 
 .cardtitle {
