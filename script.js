@@ -16,7 +16,6 @@ function closeForm () {
 
 closing.addEventListener('click', closeForm)
 
-
 let myLibrary = []
 
 function Book (title = 'unknown', author = 'unknown', pages = 'unknown') {
@@ -38,17 +37,10 @@ function addToLibrary () {
   const player1 = new Book(htmlTitle, htmlAuthor, htmlPages)
   player1.sayName()
 
-  /* function deleteBook() {
-    htmlTitle.parentNode.removeChild(htmlTitle)
-  } */
-
   for (i = 0; i < 1; i++) {
     const tableRow = document.createElement('tr')
     tableRow.setAttribute('class', 'tablerow')
     tbody.append(tableRow)
-
-    /*const deleteBook = document.createElement('button')
-    deleteBook.onclick(deleteBook())*/
 
     const bookRead = document.createElement('input')
     bookRead.setAttribute('type', 'checkbox')
@@ -64,14 +56,11 @@ function addToLibrary () {
     bookAuthor.setAttribute('class', 'bookauthor')
     bookAuthor.innerHTML = htmlAuthor
     tableRow.append(bookAuthor)
-  
-
 
     const bookPages = document.createElement('td')
     bookPages.setAttribute('class', 'bookpages')
     bookPages.innerHTML = htmlPages
     tableRow.append(bookPages)
-
 
     function deleteBook () {
       myLibrary.splice(this.bookTitle, 3)
@@ -87,7 +76,7 @@ function addToLibrary () {
     removeBook.innerHTML = 'Delete'
     tableRow.append(removeBook)
     removeBook.addEventListener('click', deleteBook)
-}
+  }
 }
 
 form.addEventListener('submit', addToLibrary)
