@@ -22,6 +22,14 @@ body {
     font-size: 20px;
     grid-column: 1 / span 1;
     grid-row: 1 / span 1;
+    background-color: burlywood;
+    border-color: burlywood;
+    color: black;
+    font-family: 'Lugrasimo', cursive;
+}
+
+#close {
+    font-family: 'Lugrasimo', cursive;
 }
 
 #book_form {
@@ -32,7 +40,19 @@ body {
     margin-top: 400px;
     margin-left: 20px;
     margin-bottom: 20px;
+}
 
+#submit {
+    color: white;
+    background-color: green;
+    border-radius: 3px;
+    border-color: green;
+    font-weight: bold;
+}
+
+.tablerow {
+    padding-top: 30px;
+    padding-left: 10px;
 }
 
 #pages {
@@ -55,18 +75,24 @@ label {
 #headrow {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    font-family: 'Lugrasimo', cursive;
+    border-style: solid;
+    border-color: black;
+    border-width: 0px 0px 2px 2px;
+    border-radius: 3px;
+    box-shadow: 5px 5px 10px grey;
 }
 
 .formcategory {
     font-size: 25px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Lugrasimo', cursive;
     font-weight: 500;
 }
 
 .headcells {
     width: max-content;
     font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Lugrasimo', cursive;
     font-weight: 500;
 }
 
@@ -81,6 +107,11 @@ label {
     grid-column: 1 / span 1;
     grid-row: 1 / span 1;
     width: 100px;
+    color: white;
+    background-color: red;
+    border-radius: 3px;
+    border-color: red;
+    font-weight: bold;
 }
 
 .bookread {
