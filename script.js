@@ -18,11 +18,14 @@ closing.addEventListener('click', closeForm)
 
 let myLibrary = []
 
-function Book (title = 'unknown', author = 'unknown', pages = 'unknown') {
-  this.title = title
-  this.author = author
-  this.pages = pages
-  this.sayName = function () {
+class Book {
+  constructor(title, author, pages) {
+    this.title = title
+    this.author = author
+    this.pages = pages
+  }
+
+  sayName () {
     myLibrary.push(title, author, pages)
     console.log(myLibrary)
   }
@@ -37,46 +40,44 @@ function addToLibrary () {
   const player1 = new Book(htmlTitle, htmlAuthor, htmlPages)
   player1.sayName()
 
-  for (i = 0; i < 1; i++) {
-    const tableRow = document.createElement('tr')
-    tableRow.setAttribute('class', 'tablerow')
-    tbody.append(tableRow)
+  const tableRow = document.createElement('tr')
+  tableRow.setAttribute('class', 'tablerow')
+  tbody.append(tableRow)
 
-    const bookRead = document.createElement('input')
-    bookRead.setAttribute('type', 'checkbox')
-    bookRead.setAttribute('class', 'bookread')
-    tableRow.append(bookRead)
+  const bookRead = document.createElement('input')
+  bookRead.setAttribute('type', 'checkbox')
+  bookRead.setAttribute('class', 'bookread')
+  tableRow.append(bookRead)
 
-    const bookTitle = document.createElement('td')
-    bookTitle.setAttribute('class', 'booktitle')
-    bookTitle.innerHTML = htmlTitle
-    tableRow.append(bookTitle)
+  const bookTitle = document.createElement('td')
+  bookTitle.setAttribute('class', 'booktitle')
+  bookTitle.innerHTML = htmlTitle
+  tableRow.append(bookTitle)
 
-    const bookAuthor = document.createElement('td')
-    bookAuthor.setAttribute('class', 'bookauthor')
-    bookAuthor.innerHTML = htmlAuthor
-    tableRow.append(bookAuthor)
+  const bookAuthor = document.createElement('td')
+  bookAuthor.setAttribute('class', 'bookauthor')
+  bookAuthor.innerHTML = htmlAuthor
+  tableRow.append(bookAuthor)
 
-    const bookPages = document.createElement('td')
-    bookPages.setAttribute('class', 'bookpages')
-    bookPages.innerHTML = htmlPages
-    tableRow.append(bookPages)
+  const bookPages = document.createElement('td')
+  bookPages.setAttribute('class', 'bookpages')
+  bookPages.innerHTML = htmlPages
+  tableRow.append(bookPages)
 
-    function deleteBook () {
-      myLibrary.splice(this.bookTitle, 3)
-      bookRead.remove()
-      removeBook.remove()
-      bookTitle.remove()
-      bookAuthor.remove()
-      bookPages.remove()
-    }
-
-    const removeBook = document.createElement('button')
-    removeBook.setAttribute('class', 'removebook')
-    removeBook.innerHTML = 'Delete'
-    tableRow.append(removeBook)
-    removeBook.addEventListener('click', deleteBook)
+  function deleteBook () {
+    myLibrary.splice(this.bookTitle, 3)
+    bookRead.remove()
+    removeBook.remove()
+    bookTitle.remove()
+    bookAuthor.remove()
+    bookPages.remove()
   }
+
+  const removeBook = document.createElement('button')
+  removeBook.setAttribute('class', 'removebook')
+  removeBook.innerHTML = 'Delete'
+  tableRow.append(removeBook)
+  removeBook.addEventListener('click', deleteBook)
 }
 
 form.addEventListener('submit', addToLibrary)

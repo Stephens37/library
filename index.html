@@ -15,13 +15,31 @@
         <form action="javascript:," id='book_form'>
             <button id="close" type="button">Cancel</button>
             <label for="title" class="formcategory">TITLE</label>
-            <input type="text" name="title" id="title">
+            <input type="text" name="title" id="title" required>
             <label for="author" class="formcategory">AUTHOR</label>
-            <input type="text" name="author" id="author">
+            <input type="text" name="author" id="author" required>
             <label for="pages" class="formcategory">PAGES</label>
-            <input type="text" name="pages" id="pages">
+            <input type="text" name="pages" id="pages" required>
             <button type="submit" id="submit" class="formcategory" form="book_form">Submit</button>
         </form>
+        <script>
+            function titleInvalid() {
+              const titleValidationMessage = 'Must enter title'
+              const titleInpObj = document.querySelector('#title')
+              const authorValidationMessage = 'Must enter author name'
+              const authorInpObj = document.querySelector('#author')
+              const pagesValidationMessage = 'Must enter amount of pages'
+              const pagesInpObj = document.querySelector('#pages')
+              if (!titleInpObj.checkValidity()) {
+                alert(titleValidationMessage)
+              } else if (!authorInpObj.checkValidity()) {
+                alert(authorValidationMessage)
+              } else if (!pagesInpObj.checkValidity()) {
+                alert(pagesValidationMessage)
+              } else console.log('hi')
+            }
+            document.querySelector('#submit').addEventListener('click', titleInvalid)
+        </script>
 
     
     
