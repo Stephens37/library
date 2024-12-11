@@ -66,11 +66,7 @@ function addToLibrary () {
 
   function deleteBook () {
     myLibrary.splice(this.bookTitle, 3)
-    bookRead.remove()
-    removeBook.remove()
-    bookTitle.remove()
-    bookAuthor.remove()
-    bookPages.remove()
+    tableRow.remove()
   }
 
   const removeBook = document.createElement('button')
